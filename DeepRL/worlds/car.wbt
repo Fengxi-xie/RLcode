@@ -1,0 +1,645 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+  basicTimeStep 20
+}
+Viewpoint {
+  orientation 0.3478756809455631 0.8399198702571415 0.41655386464884375 4.364976656466727
+  position -23.078682054542995 31.29933077448982 1.9556903022909582
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 13 13
+  wallThickness 0.1
+  wallHeight 0.6
+}
+Robot {
+  translation -2.488798106464145 0.19610207735349344 -0.3512033729681893
+  rotation -0.0023143807777793696 0.9999906784089709 -0.003645097636719275 0.5465569473052067
+  children [
+    DEF Body Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 1
+        }
+      }
+      geometry Cylinder {
+        height 0.1
+        radius 0.27
+      }
+    }
+    DEF wheel2 Transform {
+      translation -0.15 -0.1 0.225
+      rotation 1 0 0 1.5708
+      children [
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 465.9434620699216
+            axis 0 -1 0
+          }
+          device [
+            PositionSensor {
+              name "rb_ps"
+            }
+            RotationalMotor {
+              name "motor2"
+              maxVelocity 30
+            }
+          ]
+          endPoint Solid {
+            rotation 0 -1 0 0.9877493386322231
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 1 0.498039
+                  }
+                }
+                geometry Cylinder {
+                  height 0.05
+                  radius 0.1
+                }
+              }
+            ]
+            name "solid(2)"
+            boundingObject Cylinder {
+              height 0.05
+              radius 0.1
+            }
+            physics Physics {
+            }
+            linearVelocity 0.8440204325820349 0.01169848662251392 -0.18701654814007745
+            angularVelocity -5.038954231622839 1.2264787456790465 -8.70138057101683
+          }
+        }
+      ]
+    }
+    DEF wheel1 Transform {
+      translation -0.15 -0.1 -0.225
+      rotation 1 0 0 1.5708
+      children [
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 459.3361950962439
+            axis 0 -1 0
+          }
+          device [
+            PositionSensor {
+              name "lb_ps"
+            }
+            RotationalMotor {
+              name "motor1"
+              maxVelocity 30
+            }
+          ]
+          endPoint Solid {
+            rotation 0 1 0 5.619517635045502
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 1 0.498039
+                  }
+                }
+                geometry Cylinder {
+                  height 0.05
+                  radius 0.1
+                }
+              }
+            ]
+            name "solid(1)"
+            boundingObject Cylinder {
+              height 0.05
+              radius 0.1
+            }
+            physics Physics {
+            }
+            linearVelocity 0.3662271284617891 0.004665783739307256 0.09014975468593991
+            angularVelocity 1.0535040042466877 1.2154817928368247 1.8444641705156615
+          }
+        }
+      ]
+    }
+    DEF wheel3 Transform {
+      translation 0.15 -0.1 0.225
+      rotation 1 0 0 1.5708
+      children [
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 470.2330216228949
+            axis 0 -1 0
+          }
+          device [
+            RotationalMotor {
+              name "motor3"
+              maxVelocity 30
+            }
+          ]
+          endPoint Solid {
+            rotation 0 -0.9999999999999999 0 5.277308891605511
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 1 0.498039
+                  }
+                }
+                geometry Cylinder {
+                  height 0.05
+                  radius 0.1
+                }
+              }
+            ]
+            name "solid(3)"
+            boundingObject Cylinder {
+              height 0.05
+              radius 0.1
+            }
+            physics Physics {
+            }
+            linearVelocity 0.6605041851516071 -0.004519569901825239 -0.5039723645407562
+            angularVelocity -5.038935575111717 1.2268531026279867 -8.701361882759922
+          }
+        }
+      ]
+    }
+    DEF wheel4 Transform {
+      translation 0.15 -0.1 -0.225
+      rotation 1 0 0 1.5708
+      children [
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 466.10298807595865
+            axis 0 -1 0
+          }
+          device [
+            RotationalMotor {
+              name "motor4"
+              maxVelocity 30
+            }
+          ]
+          endPoint Solid {
+            rotation 0 -1 0 1.1472753446692496
+            children [
+              Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 1 0.498039
+                  }
+                }
+                geometry Cylinder {
+                  height 0.05
+                  radius 0.1
+                }
+              }
+            ]
+            name "solid(4)"
+            boundingObject Cylinder {
+              height 0.05
+              radius 0.1
+            }
+            physics Physics {
+            }
+            linearVelocity 0.18213105451787262 -0.011552231532109793 -0.22706311197046458
+            angularVelocity -0.9115809600742621 1.2156531334465455 -1.5572386989624123
+          }
+        }
+      ]
+    }
+    InertialUnit {
+      name "imu"
+    }
+    GPS {
+    }
+    Lidar {
+      translation 0.11 0.1 0
+      rotation 0 1 0 -1.5708
+      children [
+        DEF lidr_s Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 1 0 0
+            }
+          }
+          geometry Cylinder {
+            height 0.1
+            radius 0.07
+          }
+        }
+      ]
+      boundingObject USE lidr_s
+      physics Physics {
+      }
+      fieldOfView 3.14159
+      numberOfLayers 1
+    }
+    DistanceSensor {
+      translation 0.18 0.07 0
+      rotation 0 1 0 1.5708
+      children [
+        DEF ds_s Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 1 0
+            }
+          }
+          geometry Box {
+            size 0.04 0.04 0.04
+          }
+        }
+      ]
+      name "ds0"
+      boundingObject USE ds_s
+      physics Physics {
+      }
+      lookupTable [
+        0 0 0
+        1.5 1.5 0
+      ]
+      type "laser"
+      aperture 0.04
+    }
+    DistanceSensor {
+      translation 0.18 0.07 0
+      rotation 0 1 0 1.178097
+      children [
+        DEF ds_s Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 1 0
+            }
+          }
+          geometry Box {
+            size 0.04 0.04 0.04
+          }
+        }
+      ]
+      name "ds1"
+      boundingObject USE ds_s
+      physics Physics {
+      }
+      lookupTable [
+        0 0 0
+        1.5 1.5 0
+      ]
+      type "laser"
+      aperture 0.04
+    }
+    DistanceSensor {
+      translation 0.18 0.07 0
+      rotation 0 1 0 0.78539875
+      children [
+        DEF ds_s Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 1 0
+            }
+          }
+          geometry Box {
+            size 0.04 0.04 0.04
+          }
+        }
+      ]
+      name "ds2"
+      boundingObject USE ds_s
+      physics Physics {
+      }
+      lookupTable [
+        0 0 0
+        1.5 1.5 0
+      ]
+      type "laser"
+      aperture 0.04
+    }
+    DistanceSensor {
+      translation 0.18 0.07 0
+      rotation 0 1 0 0.392699075
+      children [
+        DEF ds_s Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 1 0
+            }
+          }
+          geometry Box {
+            size 0.04 0.04 0.04
+          }
+        }
+      ]
+      name "ds3"
+      boundingObject USE ds_s
+      physics Physics {
+      }
+      lookupTable [
+        0 0 0
+        1.5 1.5 0
+      ]
+      type "laser"
+      aperture 0.04
+    }
+    DistanceSensor {
+      translation 0.18 0.07 0
+      children [
+        DEF ds_s Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 1 0
+            }
+          }
+          geometry Box {
+            size 0.04 0.04 0.04
+          }
+        }
+      ]
+      name "ds4"
+      boundingObject USE ds_s
+      physics Physics {
+      }
+      lookupTable [
+        0 0 0
+        1.5 1.5 0
+      ]
+      type "laser"
+      aperture 0.04
+    }
+    DistanceSensor {
+      translation 0.18 0.07 0
+      rotation 0 1 0 -0.392699
+      children [
+        DEF ds_s Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 1 0
+            }
+          }
+          geometry Box {
+            size 0.04 0.04 0.04
+          }
+        }
+      ]
+      name "ds5"
+      boundingObject USE ds_s
+      physics Physics {
+      }
+      lookupTable [
+        0 0 0
+        1.5 1.5 0
+      ]
+      type "laser"
+      aperture 0.04
+    }
+    DistanceSensor {
+      translation 0.18 0.07 0
+      rotation 0 1 0 -0.785399
+      children [
+        DEF ds_s Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 1 0
+            }
+          }
+          geometry Box {
+            size 0.04 0.04 0.04
+          }
+        }
+      ]
+      name "ds6"
+      boundingObject USE ds_s
+      physics Physics {
+      }
+      lookupTable [
+        0 0 0
+        1.5 1.5 0
+      ]
+      type "laser"
+      aperture 0.04
+    }
+    DistanceSensor {
+      translation 0.18 0.07 0
+      rotation 0 1 0 -1.178097
+      children [
+        DEF ds_s Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 1 0
+            }
+          }
+          geometry Box {
+            size 0.04 0.04 0.04
+          }
+        }
+      ]
+      name "ds7"
+      boundingObject USE ds_s
+      physics Physics {
+      }
+      lookupTable [
+        0 0 0
+        1.5 1.5 0
+      ]
+      type "laser"
+      aperture 0.04
+    }
+    DistanceSensor {
+      translation 0.18 0.07 0
+      rotation 0 1 0 -1.5708
+      children [
+        DEF ds_s Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 1 0
+            }
+          }
+          geometry Box {
+            size 0.04 0.04 0.04
+          }
+        }
+      ]
+      name "ds8"
+      boundingObject USE ds_s
+      physics Physics {
+      }
+      lookupTable [
+        0 0 0
+        1.5 1.5 0
+      ]
+      type "laser"
+      aperture 0.04
+    }
+    TouchSensor {
+      children [
+        DEF touchshape Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 1 0.666667 0
+              transparency 0.9
+            }
+          }
+          geometry Cylinder {
+            height 0.03
+            radius 0.38
+          }
+        }
+      ]
+      name "touch"
+      boundingObject USE touchshape
+    }
+  ]
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "deepcar"
+  supervisor TRUE
+  linearVelocity 0.5107434977997811 -0.0005358081964928933 -0.22321364072946093
+  angularVelocity -0.0413106055898192 1.2251019238213448 -0.0398200148186566
+}
+Solid {
+  translation 0 0.01 -2.28
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 1 0
+          transparency 0.6
+        }
+      }
+      geometry Plane {
+        size 0.8 0.8
+      }
+    }
+  ]
+  name "s0"
+}
+Solid {
+  translation 2.05 0.01 -0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 1 0
+          transparency 0.6
+        }
+      }
+      geometry Plane {
+        size 0.8 0.8
+      }
+    }
+  ]
+  name "s1"
+}
+Solid {
+  translation 1.58 0.01 -4.92
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 1 0
+          transparency 0.6
+        }
+      }
+      geometry Plane {
+        size 0.8 0.8
+      }
+    }
+  ]
+  name "s2"
+}
+Solid {
+  translation 4.46 0.01 0.61
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 1 0
+          transparency 0.6
+        }
+      }
+      geometry Plane {
+        size 0.8 0.8
+      }
+    }
+  ]
+  name "s3"
+}
+Solid {
+  translation 4.46 0.01 -4.57
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 1 0
+          transparency 0.6
+        }
+      }
+      geometry Plane {
+        size 0.8 0.8
+      }
+    }
+  ]
+  name "s4"
+}
+Solid {
+  translation 1.77 0.01 4.83
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 1 0
+          transparency 0.6
+        }
+      }
+      geometry Plane {
+        size 0.8 0.8
+      }
+    }
+  ]
+  name "s5"
+}
+Solid {
+  translation 0.5 0.01 1.78
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 1 0
+          transparency 0.6
+        }
+      }
+      geometry Plane {
+        size 0.8 0.8
+      }
+    }
+  ]
+  name "s6"
+}
+OilBarrel {
+  translation 0 0.44 -0.8
+  radius 0.36
+}
+OilBarrel {
+  translation -0.28 0.44 -4.24
+  name "oil barrel(1)"
+  radius 0.36
+}
+OilBarrel {
+  translation 2.5 0.44 -2.81
+  name "oil barrel(2)"
+  radius 0.36
+}
+OilBarrel {
+  translation 2.5 0.44 2.51
+  name "oil barrel(3)"
+  radius 0.36
+}
+OilBarrel {
+  translation -0.85 0.14 2.96
+  name "oil barrel(4)"
+  radius 0.36
+}
+OilBarrel {
+  translation -1.59 0.43 -2.23
+  name "oil barrel(7)"
+  radius 0.36
+}
